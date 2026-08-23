@@ -1,5 +1,6 @@
-from typing import List
 from collections import defaultdict
+from typing import List
+
 
 class Solution:
     def findAnagrams(self, s: str, p: str) -> List[int]:
@@ -15,7 +16,7 @@ class Solution:
             while dt[s[r]] < 0:
                 dt[s[l]] += 1
                 l += 1
-            if r-l == lp-1:
+            if r - l == lp - 1:
                 ans.append(l)
             r += 1
         return ans
