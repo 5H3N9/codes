@@ -11,16 +11,16 @@ class Solution:
         l = 0
         for r in range(len(s)):
             cc[ord(s[r])] += 1
-            if (cc[ord(s[r])] == 0):
+            if cc[ord(s[r])] == 0:
                 df -= 1
             if df == 0:
                 while cc[ord(s[l])] != 0:
                     cc[ord(s[l])] -= 1
                     l += 1
-                if r-l+1 < ml:
+                if r - l + 1 < ml:
                     ss = l
-                    ml = r-l+1
+                    ml = r - l + 1
                 cc[ord(s[l])] -= 1
                 df += 1
                 l += 1
-        return s[ss:ss+ml] if ss!=-1 else ""
+        return s[ss : ss + ml] if ss != -1 else ""
